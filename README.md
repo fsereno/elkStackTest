@@ -16,7 +16,30 @@ POST /products/_doc
   "cost": 10.99
 }
 
+POST /products/_doc/200
+{
+  "name":"My product with ID specified",
+  "cost": 11.99
+}
+
+POST /products/_update/200
+{
+  "doc": {
+    "cost": 100.99
+  }
+}
+
+PUT /products/_doc/200
+{
+  "name":"Updated product name with PUT",
+  "cost": 111.99
+}
+
+GET /products/_doc/200
+
 GET /products/_doc/jY0pfH0BuPOXiMGxHfER
+
+GET /products
 
 GET /_cluster/health
 
