@@ -1,3 +1,5 @@
+https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
 # elkStackTest
 A sandbox for all things ELK Stack, will run in containers using Docker.
 
@@ -36,8 +38,6 @@ PUT /products/_doc/200
 }
 
 GET /products/_doc/200
-
-GET /products/_doc/jY0pfH0BuPOXiMGxHfER
 
 GET /products
 
