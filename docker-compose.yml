@@ -12,6 +12,8 @@ services:
             - discovery.type=single-node
             - 'ES_JAVA_OPTS=-Xms512m -Xmx512m'
             - logger.level=ERROR
+        volumes:
+          - elkdb:/usr/share/elasticsearch/data
         ulimits:
           memlock:
             soft: -1
@@ -25,3 +27,5 @@ services:
           - 5601:5601
       depends_on:
         - "elasticsearch"
+volumes:
+  elkdb:
