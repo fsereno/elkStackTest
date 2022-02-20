@@ -11,6 +11,8 @@ then go to:
 http://localhost:5601/app/dev_tools#/console
 
 PUT /products
+GET /products
+GET products/_search
 
 POST /products/_doc
 {
@@ -39,13 +41,48 @@ PUT /products/_doc/200
 
 GET /products/_doc/200
 
-GET /products
-
 GET /_cluster/health
 
 GET _search
 {
   "query": {
     "match_all": {}
+  }
+}
+
+POST products/_doc
+{
+  "name": "Some new product",
+  "cost": "93.45"
+}
+
+GET products/_search
+{
+  "query": {
+    "match": {
+      "_id": "5n7dGH8Bjf0YjDalpK6_"
+    }
+  }
+}
+
+GET products/_search
+{
+  "query": {
+    "range": {
+      "cost": {
+        "gte": 8.00
+      }
+    }
+  }
+}
+
+GET products/_search
+{
+  "aggs": {
+    "cost aggrigation": {
+      "sum": {
+        "field": "cost"
+      }
+    }
   }
 }
